@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Profile</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <label for="id_bio">Bio:</label>
+    <textarea id="id_bio" name="bio" rows="4" cols="50">{{ form.instance.user_profile.bio }}</textarea>
+    <br>
+    <label for="id_date_of_birth">Date of Birth:</label>
+    <input type="date" id="id_date_of_birth" name="date_of_birth" value="{{ form.instance.user_profile.date_of_birth }}">
+    <br>
+    <label for="id_profile_image">Profile Image:</label>
+    <input type="file" id="id_profile_image" name="profile_image" accept="image/*">
+    <br>
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
