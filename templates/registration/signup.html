@@ -1,35 +1,51 @@
+{#{% extends "base.html" %}#}
+{##}
+{#{% block title %}Sign Up{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#     <div class="flex items-center justify-center h-screen">#}
+{#<form class= "bg-white p-4 rounded-md w-3/4 max-w-md" action="" method="post">#}
+{#  {% csrf_token %}#}
+{#    <h2 class="text-2xl font-medium my-4">Sign Up</h2>#}
+{#        <div class="form-group">#}
+{#            <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Username: </label>#}
+{#            {{ form.username }}#}
+{#        </div>#}
+{#            <div class="form-group">#}
+{#            <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Email: </label>#}
+{#            {{ form.email }}#}
+{#        </div>#}
+{#    <div class="form-group">#}
+{#            <label for="{{ form.age.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Age: </label>#}
+{#            {{ form.age }}#}
+{#        </div>#}
+{#    <div class="form-group">#}
+{#            <label for="{{ form.birthday.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Birthday: </label>#}
+{#            {{ form.birthday }}#}
+{#        </div>#}
+{#    <div class="form-group">#}
+{#            <label for="{{ form.password1.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Password: </label>#}
+{#           {{ form.password1 }}#}
+{#        </div>#}
+{#        <div class="form-group">#}
+{#      <label for="{{ form.password2.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Confirm Password:</label>#}
+{#      {{ form.password2 }}#}
+{#    </div>#}
+{#       <div class="my-4 justify-center box-content h-full w-40">#}
+{#  <input type="submit" value="Sign Up" class="h-full w-full bg-blue-500 text-white rounded-md hover:bg-blue-600" style="margin-top: 100px;">#}
+{#       </div>#}
+{#</form>#}
+{#     </div>#}
+{#{% endblock %}#}
 {% extends "base.html" %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-     <div class="flex items-center justify-center h-screen">
+<h2 class="text-2xl font-medium my-4">Sign Up</h2>
 <form class= "bg-white p-4 rounded-md w-3/4 max-w-md" action="" method="post">
   {% csrf_token %}
-    <h2 class="text-2xl font-medium my-4">Sign Up</h2>
-        <div class="form-group">
-            <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Username: </label>
-            {{ form.username }}
-        </div>
-            <div class="form-group">
-            <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Email: </label>
-            {{ form.email }}
-        </div>
-    <div class="form-group">
-            <label for="{{ form.age.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Age: </label>
-            {{ form.age }}
-        </div>
-    <div class="form-group">
-            <label for="{{ form.birthday.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Birthday: </label>
-            {{ form.birthday }}
-        </div>
-    <div class="form-group">
-            <label for="{{ form.password.id_for_label }}" class="block text-sm font-medium leading-5 text-gray-700">Password: </label>
-            {{ form.password }}
-        </div>
-       <div class="my-4 justify-center box-content h-full w-40">
-  <input type="submit" value="Sign Up" class="h-full w-full bg-blue-500 text-white rounded-md hover:bg-blue-600" style="margin-top: 100px;">
-       </div>
+  {{ form.as_p }}
+  <button class="px-4 py-2 text-white bg-blue-700 border-b border-gray-200 rounded-t-lg cursor-pointer dark:bg-gray-800 dark:border-gray-600" type="submit">Sign Up</button>
 </form>
-     </div>
 {% endblock %}
