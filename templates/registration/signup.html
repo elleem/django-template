@@ -42,10 +42,10 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<h2>Sign Up</h2>
-<form method="post">
+<h2 class="text-2xl font-medium my-4">Sign Up</h2>
+<form class= "bg-white p-4 rounded-md w-3/4 max-w-md" action="" method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Sign Up</button>
+  <button class="px-4 py-2 text-white bg-blue-700 border-b border-gray-200 rounded-t-lg cursor-pointer dark:bg-gray-800 dark:border-gray-600" type="submit">Sign Up</button>
 </form>
 {% endblock %}
